@@ -5,23 +5,16 @@ namespace QaWebTesterDemo.Pages
 {
     public class HomePage
     {
-
-        private readonly IWebDriver _driver;
-
-        public HomePage(IWebDriver driver)
-        {
-            _driver = driver;
-        }
-
+        
         //UI Elements
-        public IWebElement Header => _driver.FindElement(By.XPath("//header7"));
+        private IWebElement Header => DriverBoss.driver.FindElement(By.XPath("//header"));
 
         //Methods
-        public void ClickOnHeader()
+        public HomePage ClickOnHeader()
         {
             DoAction.Click(Header);
+            return new HomePage();
         }
-
 
     }
 
