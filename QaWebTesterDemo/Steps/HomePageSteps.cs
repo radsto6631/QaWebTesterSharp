@@ -1,18 +1,18 @@
-﻿using QaWebTesterDemo.Pages;
+﻿using QaWebTesterDemo.Support;
 using TechTalk.SpecFlow;
 
 namespace QaWebTesterDemo.Steps
 {
 
     [Binding]
-    class HomePageSteps
+    class HomePageSteps : MyPages
     {
         
 
         [Given(@"Navigate to Site")]
         public void GivenNavigateToSite()
         {
-            new HomePage().ClickOnHeader();
+           HomePage.ClickOnHeader();
         }
 
     }
