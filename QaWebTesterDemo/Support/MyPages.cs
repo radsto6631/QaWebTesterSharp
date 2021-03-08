@@ -5,7 +5,7 @@ namespace QaWebTesterDemo.Support
     class MyPages
     {
 
-        private HomePage HomePage;
+        public HomePage HomePage;
 
         public MyPages()
         {
