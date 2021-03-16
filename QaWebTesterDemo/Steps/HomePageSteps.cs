@@ -1,26 +1,24 @@
-﻿using OpenQA.Selenium;
-using QaWebTesterDemo.Pages;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using QaWebTesterDemo.Support;
 using TechTalk.SpecFlow;
 
 namespace QaWebTesterDemo.Steps
 {
 
     [Binding]
-    class HomePageSteps
+    class HomePageSteps : MyPages
     {
-
-        private readonly HomePage _homePage;
-
-        public HomePageSteps(HomePage page) => _homePage = page;
         
 
         [Given(@"Navigate to Site")]
         public void GivenNavigateToSite()
         {
-            _homePage.ClickOnHeader();
+           HomePage.ClickOnHeader();
+        }
+
+        [Then(@"I click on ble ble")]
+        public void ThenIClickOnBleBle()
+        {
+            JavaPage.ClickOnSomething();
         }
 
 
