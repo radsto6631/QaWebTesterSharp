@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using QaWebTesterDemo.Support;
 
-namespace QaWebTesterDemo.Pages
+namespace QaWebTesterDemo.PageObjects
 {
     public class HomePage
     {
@@ -9,7 +9,8 @@ namespace QaWebTesterDemo.Pages
         static IWebDriver Driver = DriverBoss.driver;
         
         //UI Elements
-        private IWebElement Header => Driver.FindElement(By.XPath("//header"));
+        private IWebElement Header => Driver.FindElement(By.XPath("//a[contains(text(),'Basic Java')]"));
+        private IWebElement Headerw => Driver.FindElement(By.XPath("//headerd"));
 
         //Methods
         public HomePage ClickOnHeader()

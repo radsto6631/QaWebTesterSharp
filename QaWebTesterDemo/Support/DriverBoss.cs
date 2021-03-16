@@ -20,10 +20,7 @@ namespace QaWebTesterDemo
         {
             if (driver != null)
             {
-                driver.Manage().Cookies.DeleteAllCookies();
-                driver.Close();
                 driver.Quit();
-                driver.Dispose();
                 driver = null;
             }
         }
@@ -33,7 +30,6 @@ namespace QaWebTesterDemo
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("--start-maximized");
             options.AddArguments("--disable-extensions");
-            options.AddAdditionalCapability("useAutomationExtension", false);
             options.AddExcludedArgument("enable-automation");
             driver = new ChromeDriver(options);
             return driver;

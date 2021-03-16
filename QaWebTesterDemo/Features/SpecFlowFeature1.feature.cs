@@ -105,6 +105,9 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
  testRunner.Given("Navigate to Site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
+#line 6
+ testRunner.Then("I click on ble ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

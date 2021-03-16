@@ -1,4 +1,4 @@
-﻿using QaWebTesterDemo.Pages;
+﻿using QaWebTesterDemo.PageObjects;
 
 namespace QaWebTesterDemo.Support
 {
@@ -6,10 +6,12 @@ namespace QaWebTesterDemo.Support
     {
 
         public HomePage HomePage;
+        public JavaPage JavaPage;
 
         public MyPages()
         {
             HomePage = new HomePage();
+            JavaPage = new JavaPage();
         }
     }
 }

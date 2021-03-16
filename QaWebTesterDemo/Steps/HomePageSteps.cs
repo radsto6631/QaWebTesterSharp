@@ -15,5 +15,12 @@ namespace QaWebTesterDemo.Steps
            HomePage.ClickOnHeader();
         }
 
+        [Then(@"I click on ble ble")]
+        public void ThenIClickOnBleBle()
+        {
+            JavaPage.ClickOnSomething();
+        }
+
+
     }
 }
