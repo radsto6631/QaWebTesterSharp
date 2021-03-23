@@ -6,16 +6,13 @@ namespace QaWebTesterDemo.PageObjects
     public class HomePage
     {
 
-        static IWebDriver Driver = DriverBoss.driver;
-        
         //UI Elements
-        private IWebElement Header => Driver.FindElement(By.XPath("//a[contains(text(),'Basic Java')]"));
-        private IWebElement Headerw => Driver.FindElement(By.XPath("//headerd"));
+        private By Header => By.XPath("//a[contains(text(),'Basic Java')]");
 
         //Methods
         public HomePage ClickOnHeader()
         {
-            DoAction.Click(Header);
+            Header.ClickAndWait();
             return new HomePage();
         }
 
