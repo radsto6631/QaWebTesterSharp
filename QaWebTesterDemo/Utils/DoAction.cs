@@ -4,30 +4,26 @@ using System;
 
 namespace QaWebTesterDemo.Support
 {
-    class DoAction
+    public static class DoAction
     {
 
-        public static void WaitForElement(IWebElement element)
-        {
-            _ = Await.WaitForElementAsync(element);
-        }
-
-        public static void Click(IWebElement element)
+        public static void ClickAndWait(this By element)
         {
             try
             {
-                WaitForElement(element);
+                DriverBoss.driver.FindElement(element).Click();
                 Highlight(element);
-                element.Click();
-            } catch (Exception e)
+            }
+            catch (Exception e)
             {
                 Assert.Fail(e.Message);
             }
         }
 
-        public static void Highlight(IWebElement element)
+
+        public static void Highlight(this By element)
         {
-            ((IJavaScriptExecutor)DriverBoss.driver).ExecuteScript("arguments[0].style.border='3px dotted blue'", element);
+            ((IJavaScriptExecutor)DriverBoss.driver).ExecuteScript("arguments[0].style.border='3px dotted blue'", DriverBoss.driver.FindElement(element));
         }
 
 

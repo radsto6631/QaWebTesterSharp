@@ -12,13 +12,13 @@ namespace QaWebTesterDemo.PageObjects
         static IWebDriver Driver = DriverBoss.driver;
 
         //UI Elements
-        private IWebElement JavaTypes => Driver.FindElement(By.XPath("//a[contains(text(),'Data Types')]"));
+        private By JavaTypes => By.XPath("//a[contains(text(),'Data Types')]");
 
         //Methods
         public JavaPage ClickOnSomething()
         {
-           // Thread.Sleep(5000);
-            DoAction.Click(JavaTypes);
+            Thread.Sleep(5000);
+            JavaTypes.ClickAndWait();
             return new JavaPage();
         }
 
