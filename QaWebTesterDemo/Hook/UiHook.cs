@@ -13,7 +13,6 @@ namespace QaWebTesterDemo
         [BeforeScenario]
         public void BeforeScenario()
         {
-            DriverBoss.GetInstance().Navigate().GoToUrl("https://www.qawebtester.com");
             DriverBoss.GetInstance().Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 

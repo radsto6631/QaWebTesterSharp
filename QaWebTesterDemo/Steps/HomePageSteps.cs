@@ -21,6 +21,13 @@ namespace QaWebTesterDemo.Steps
             JavaPage.ClickOnSomething();
         }
 
+        [Given(@"Navigate to Site (.*)")]
+        public void GivenNavigateToSite(string url)
+        {
+            DriverBoss.GetInstance().Navigate().GoToUrl("https://"+url);
+        }
+
+
 
     }
 }

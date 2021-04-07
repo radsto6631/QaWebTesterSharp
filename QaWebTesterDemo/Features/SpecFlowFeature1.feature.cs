@@ -76,11 +76,20 @@ namespace QaWebTesterDemo.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("First Scenario")]
         [NUnit.Framework.CategoryAttribute("Smoke")]
-        public virtual void FirstScenario()
+        [NUnit.Framework.TestCaseAttribute("google.com", null)]
+        [NUnit.Framework.TestCaseAttribute("wp.pl", null)]
+        [NUnit.Framework.TestCaseAttribute("amazon.com", null)]
+        public virtual void FirstScenario(string url, string[] exampleTags)
         {
-            string[] tagsOfScenario = new string[] {
+            string[] @__tags = new string[] {
                     "Smoke"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            argumentsOfScenario.Add("url", url);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("First Scenario", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
@@ -103,7 +112,7 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 5
- testRunner.Given("Navigate to Site", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("Navigate to Site {0}", url), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 6
  testRunner.Then("I click on ble ble", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
